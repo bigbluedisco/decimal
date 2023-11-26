@@ -1309,7 +1309,7 @@ func (d Decimal) Truncate(precision int32) Decimal {
 
 // UnmarshalJSON implements the json.Unmarshaler interface.
 func (d *Decimal) UnmarshalJSON(decimalBytes []byte) error {
-	if string(decimalBytes) == "null" || string(decimalBytes) == `""` {
+	if string(decimalBytes) == "null" || string(decimalBytes) == `""` || string(decimalBytes) == "false" {
 		return nil
 	}
 
